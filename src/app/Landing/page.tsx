@@ -7,8 +7,8 @@ import Topcard from "@/app/component/Popup"
 
 
 export default function Landing(props:any) {
-  const arr=props.props ||[]
-  console.log(arr,"in the landing page")
+  const arr=props.props.data ||[]
+  console.log(arr,"in the landing page",props)
 
 if(arr !="undefined" ){
   return (

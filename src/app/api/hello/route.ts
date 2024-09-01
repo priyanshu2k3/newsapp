@@ -1,34 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
 import {data} from "@/lib/tmp"
-
+import axios from "axios";
 
 export async function POST(request:NextRequest) {
-  
-// const data=data;
-  return NextResponse.json(data);
-
-}
-// export async function PUT(request:NextRequest) {
-//   const body = await request.json();
-
-//   console.log("Request :: Body :: ", body);
-//   return NextResponse.json({ msg: "hey from the  put route hello server is working fine " });
-
-// }
-
-// export async function POST(request:NextRequest) {
-//   const body = await request.json();
-
-//   console.log("Request :: Body :: ", body);
-//   return NextResponse.json({ msg: "hey from the post route hello server is working fine " });
-
-// }
-
-
-// export async function DELETE(request:NextRequest) {
-//   const body = await request.json();
-
-//   console.log("Request :: Body :: ", body);
-//   return NextResponse.json({ msg: "hey from the delete route hello server is working fine " });
-
-// }
+  const {serchitem}=await request.json();
+  console.log(serchitem)
+  const apikey=process.env.apikey;
+  const url="https://newsdata.io/api/1/news?apikey="+apikey+" &q="+serchitem +"&country=in&language=en&category=health";
+  try {
+    let response= await axios.get(url);                   
+    console.log(response.data.results,"main")
+    return NextResponse.json(response.data.results);
+  }
+  catch (error) {
+      console.log(error,"error occured")
+      return NextResponse.json(error);
+    }
+  }
