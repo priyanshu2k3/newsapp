@@ -1,4 +1,6 @@
-export const Search=()=>{
+export const Search=(props:any)=>{
+    const setSearchitem=props.props;
+    
     return(
         
 <form className="flex items-center max-w-lg mx-auto m-2 w-full">   

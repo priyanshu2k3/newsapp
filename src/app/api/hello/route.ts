@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import {data} from "@/lib/tmp"
 
 
-export async function GET(request:NextRequest) {
+export async function POST(request:NextRequest) {
   
 // const data=data;
   return NextResponse.json(data);

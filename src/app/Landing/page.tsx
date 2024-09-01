@@ -7,22 +7,15 @@ import Topcard from "@/app/component/Popup"
 
 
 export default function Landing(props:any) {
-  const arr=props.props
+  const arr=props.props ||[]
   console.log(arr,"in the landing page")
 
-if(arr !=="undefined" ){
+if(arr !="undefined" ){
   return (
 
       <div className="bg-white py-24 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 lg:px-10">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">InformaSphere</h2>
-            <p className="mt-2 text-lg leading-8 text-gray-600">
-              Combines information and sphere, indicating a comprehensive news coverage.
-            </p>
-          </div>
-        
-          <Search/>
+          
           <div className="mx-auto border-t border-grey-200  grid max-w-2xl grid-cols-1 gap-x-8 gap-y-2 sm:mt-2 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {arr.map((feed:any) => (
               <article key={feed.article_id} className="flex max-w-xl flex-col items-start justify-between border-2 border-grey-500 p-10">
