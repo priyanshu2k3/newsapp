@@ -8,10 +8,10 @@ export default function Landing(props:any) {
   const arr=props.props.data ||[]
   console.log(arr,"in the landing page",props)
   const handleSave=()=>{
-    
+
   }
 
-if(arr !="undefined" ){
+if(arr !="undefined" && !arr[0]){
   return (
 
       <div className="bg-white py-24 sm:py-10">
