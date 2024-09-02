@@ -1,14 +1,15 @@
 "use client"
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import {Search} from "@/app/component/search"
-import {Drawer} from "@/components/ui/drawer"
 import Topcard from "@/app/component/Popup"
 
 
 export default function Landing(props:any) {
   const arr=props.props.data ||[]
   console.log(arr,"in the landing page",props)
+  const handleSave=()=>{
+    
+  }
 
 if(arr !="undefined" ){
   return (
@@ -20,7 +21,7 @@ if(arr !="undefined" ){
             {arr.map((feed:any) => (
               <article key={feed.article_id} className="flex max-w-xl flex-col items-start justify-between border-2 border-grey-500 p-10">
                 <div className="flex items-center gap-x-4 text-xs">
-                  <div><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M200-120v-640q0-33 23.5-56.5T280-840h400q33 0 56.5 23.5T760-760v640L480-240 200-120Zm80-122 200-86 200 86v-518H280v518Zm0-518h400-400Z"/></svg></div>
+                  <div onClick={handleSave}><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M200-120v-640q0-33 23.5-56.5T280-840h400q33 0 56.5 23.5T760-760v640L480-240 200-120Zm80-122 200-86 200 86v-518H280v518Zm0-518h400-400Z"/></svg></div>
                   <time dateTime={feed.pubDate} className="text-gray-500">
                     {feed.pubDate}
                   </time>

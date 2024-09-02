@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Landing from "./Landing/page";
 import {Search} from "@/app/component/search"
-const dotenv = require('dotenv');
+
 
 export default function Home() {
   const [fetchResponse,setFetchResponse]=useState([])
